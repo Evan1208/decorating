@@ -1,6 +1,5 @@
 package com.example.decorating
 
-import android.os.Looper
 import java.lang.StringBuilder
 
 abstract class Beverage {
@@ -22,6 +21,8 @@ abstract class Beverage {
 
     private val mDescription = StringBuilder()
 
+
+
     open fun getDescription(): String {
         if( mDescription.isEmpty()) {
             initName()
@@ -29,12 +30,12 @@ abstract class Beverage {
         return mDescription.toString()
     }
 
-    fun setDescription(pDescription: Beverage) {
+    fun setDescription(pDescription: Beverage):String {
         cleanBuilder(mDescription)
-        mDescription.append(pDescription::class.java.simpleName)
+        return mDescription.append(pDescription::class.java.simpleName).toString()
     }
 
 
     abstract fun cost(): Double
-    abstract fun initName()
+    abstract fun initName():String
 }

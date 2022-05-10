@@ -8,8 +8,8 @@ class Espresso: Beverage() {
         return 1.11
     }
 
-    override fun initName() {
-        setDescription(this)
+    override fun initName():String {
+        return setDescription(this)
     }
 
 }

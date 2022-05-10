@@ -8,7 +8,7 @@ class DarkRoast: Beverage() {
         return 0.89
     }
 
-    override fun initName() {
-        setDescription(this)
+    override fun initName():String {
+        return setDescription(this)
     }
 }

@@ -14,7 +14,7 @@ class Mocha(private var mBeverage: Beverage): CondimentDecorator() {
     }
 
     override fun getDescription(): String {
-        return mBeverage.getDescription() + "," + super.getDescription()
+        return mBeverage.getDescription() + ",${this.initName()}"
     }
 
 //    override fun getCondimentDescription(): String {
@@ -25,7 +25,8 @@ class Mocha(private var mBeverage: Beverage): CondimentDecorator() {
         return 0.20 + mBeverage.cost()
     }
 
-    override fun initName() {
-        setDescription(this)
+    override fun initName():String {
+        return setDescription(this)
     }
+
 }

@@ -15,14 +15,14 @@ class Soy(private var mBeverage: Beverage): CondimentDecorator() {
 
 
     override fun getDescription(): String {
-        return mBeverage.getDescription() + "," + super.getDescription()
+        return mBeverage.getDescription() + ",${this.initName()}"
     }
 
     override fun cost(): Double {
         return 0.30 + mBeverage.cost()
     }
 
-    override fun initName() {
-        setDescription(this)
+    override fun initName():String {
+        return setDescription(this)
     }
 }
